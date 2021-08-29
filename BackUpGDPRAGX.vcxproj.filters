@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{22b02bf3-6cfb-4314-9427-50f12f34edd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{2d846264-8b3b-4952-a027-5db56a24f29f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skybox">
+      <UniqueIdentifier>{d4550cb0-7247-4fdc-98e3-06980c410541}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Shaders\fragment.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\vertex.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\gouraud2_fragment.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\gouraud2_vertex.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\Phong_vertex.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\Phong_fragment.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\phong_directional_fragment.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\phong_spotlight_fragment.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\skybox_fragment.shader" />
+    <None Include="Shaders\skybox_vertex.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Assets\bunny.obj">
+      <Filter>Assets</Filter>
+    </Object>
+    <Object Include="Assets\spoon.obj">
+      <Filter>Assets</Filter>
+    </Object>
+    <Object Include="Assets\suzanne.obj">
+      <Filter>Assets</Filter>
+    </Object>
+    <Object Include="Assets\teacup.obj">
+      <Filter>Assets</Filter>
+    </Object>
+    <Object Include="Assets\teapot.obj">
+      <Filter>Assets</Filter>
+    </Object>
+    <Object Include="Assets\two_tourus.obj">
+      <Filter>Assets</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Downloads\tiny_obj_loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Bunny.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Earth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\InputSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Moon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\obj_mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\SkyBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Sun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Teapot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Skybox\back.png">
+      <Filter>Skybox</Filter>
+    </Image>
+    <Image Include="Skybox\bottom.png">
+      <Filter>Skybox</Filter>
+    </Image>
+    <Image Include="Skybox\cubemap.png">
+      <Filter>Skybox</Filter>
+    </Image>
+    <Image Include="Skybox\front.png">
+      <Filter>Skybox</Filter>
+    </Image>
+    <Image Include="Skybox\left.png">
+      <Filter>Skybox</Filter>
+    </Image>
+    <Image Include="Skybox\right.png">
+      <Filter>Skybox</Filter>
+    </Image>
+    <Image Include="Skybox\top.png">
+      <Filter>Skybox</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
