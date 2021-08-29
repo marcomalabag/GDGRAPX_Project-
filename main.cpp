@@ -191,6 +191,7 @@ int main() {
 		prevTime = currentTime;
 		processInput();
 		glfwSetCursorPosCallback(window, mouse_callback);
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 #pragma endregion
 
 		glfwGetFramebufferSize(window, &width, &height);
