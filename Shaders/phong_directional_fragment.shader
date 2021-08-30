@@ -23,7 +23,7 @@ void main()
 	///phong shading
 	vec3 reflectDir = reflect(-lightVector, Normal);
 
-	float spec = pow(max(dot(reflectDir, viewDir), 0.0), 4);
+	float spec = pow(max(dot(reflectDir, viewDir), 0.0), 64);
 
 	//blinn phong
 	//float spec = 0.0;

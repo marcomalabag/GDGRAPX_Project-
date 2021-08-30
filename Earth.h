@@ -6,8 +6,8 @@ ObjData EarthObjData;
 
 void InitializeEarth() {
 	
-	LoadObjFile(&EarthObjData, "earth/Earth.obj");
-	GLfloat bunnyOffsets[] = { 0.0f, 0.0f, 0.0f };
+	LoadObjFile(&EarthObjData, "LibertyStatue/LibertStatue.obj");
+	GLfloat bunnyOffsets[] = { 0.0f, 0.0f, -1.5f };
 
 	LoadObjToMemory(
 		&EarthObjData,

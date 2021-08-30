@@ -13,8 +13,8 @@ GLFWwindow* initialize() {
 		return NULL;
 	}
 
-	width = 1024;
-	height = 768;
+	width = 1920;
+	height = 1080;
 
 	// set opengl version to 3.3
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -23,7 +23,7 @@ GLFWwindow* initialize() {
 
 	// create window 
 
-	Window = glfwCreateWindow(width, height, "Marco Malabag", NULL, NULL);
+	Window = glfwCreateWindow(width, height, "Marco Malabag and Gab Plaza", NULL, NULL);
 	if (Window == NULL) {
 		fprintf(stderr, "Failed to load window! \n");
 		return NULL;

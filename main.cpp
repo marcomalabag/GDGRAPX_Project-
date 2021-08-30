@@ -25,6 +25,7 @@ float deltaTime = 0.0f;
 
 bool setOrtho = false;
 bool setPers = true;
+int  pauseCycle = 0;
 
 float xSpeed = 1.0f;
 float xFactor = 0.0f;
@@ -55,20 +56,21 @@ void processInput() {
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
 		//eyefront = eyefront - 0.01f;
 		cameraPos += cameraSpeed * cameraFront;
-		
+		std::cout << "W" << std::endl;
 	}
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
 		cameraPos -= cameraRight * cameraSpeed;
-		
+		std::cout << "A" << std::endl;
 	}
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
 		cameraPos -= cameraSpeed * cameraFront;
-		
+		std::cout << "S" << std::endl;
 	}
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
 		cameraPos += cameraRight * cameraSpeed;
-		
+		std::cout << "D" << std::endl;
 	}
+	/*
 	if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS) {
 		cameraPos -= cameraUpView * cameraSpeed;
 		
@@ -76,6 +78,16 @@ void processInput() {
 	if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
 		cameraPos += cameraUpView * cameraSpeed;
 		
+	}
+	*/
+	if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS) {
+		if (pauseCycle == 0) {
+			pauseCycle = 1;
+		}
+		else if (pauseCycle == 1){
+			pauseCycle = 0;
+		}
+		std::cout << "P pressed - time paused	" << std::endl;
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
@@ -111,8 +123,8 @@ int main() {
 	std::vector<std::string> faces{
 		"right.png",
 		"left.png",
-		"bottom.png",
 		"top.png",
+		"bottom.png",
 		"front.png",
 		"back.png"
 	};
@@ -126,7 +138,7 @@ int main() {
 
 	GLuint skyboxShader = LoadShaders("Shaders/skybox_vertex.shader", "Shaders/skybox_fragment.shader");
 
-	GLuint shaderProgram = LoadShaders("Shaders/Phong_vertex.shader", "Shaders/Phong_fragment.shader");
+	GLuint shaderProgram = LoadShaders("Shaders/Phong_vertex.shader", "Shaders/Phong_directional_fragment.shader");
 	
 	glUseProgram(shaderProgram);
 	GLuint colorLoc = glGetUniformLocation(shaderProgram, "uniformColor");
@@ -150,8 +162,8 @@ int main() {
 	
 	GLuint lightPoscLoc = glGetUniformLocation(shaderProgram, "u_light_post");
 	GLuint lightDirLoc = glGetUniformLocation(shaderProgram, "u_light_dir");
-	glUniform3f(lightPoscLoc, 2.5f, 0.0f, 0.0f);
-	glUniform3f(lightDirLoc, 0.0f, 0.0f, -1.0f);
+	glUniform3f(lightPoscLoc, 1.0f, 1.0f, 0.0f);
+	glUniform3f(lightDirLoc, 0.0f, 0.0f, 0.0f);
 
 #pragma endregion
 
@@ -174,24 +186,28 @@ int main() {
 		
 #pragma region InputSystem
 		//glfwGetCursorPos(window, &XMousePosition, &YMousePosition);
+		processInput();
+		glfwSetCursorPosCallback(window, mouse_callback);
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 		trans = glm::mat4(1.0f);
 		float currentTime = glfwGetTime();
-
-		deltaTime = currentTime - prevTime;
-		xFactor += deltaTime * xSpeed;
-
+		/*
 		if (xFactor > 1.0f) {
 			xSpeed = -1.0f;
 		}
 		else if (xFactor < -1.0f) {
 			xSpeed = 1.0f;
 		}
-
-		//glUniform3f(lightDirLoc, glm::sin(xFactor), glm::cos(xFactor), 0.0f);
+		*/
+		if (pauseCycle == 0) {
+			//Implementation of day/night cycle
+			deltaTime = currentTime - prevTime;
+			xFactor += deltaTime * xSpeed;
+			glUniform3f(lightDirLoc, glm::sin(xFactor * 2), glm::cos(xFactor * 2), 0.0f);
+		}
 		prevTime = currentTime;
-		processInput();
-		glfwSetCursorPosCallback(window, mouse_callback);
-		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+		
 #pragma endregion
 
 		glfwGetFramebufferSize(window, &width, &height);
@@ -247,6 +263,22 @@ int main() {
 		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
 		trans = glm::mat4(1.0f);
+		trans = glm::translate(trans, glm::vec3(TransformX, -1.0f, 0.0f));
+		//glm::angleAxis(glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		trans = glm::scale(trans, glm::vec3(ScaleX, ScaleY, 1.0f));
+		trans = glm::rotate(trans, glm::radians(RotateX), glm::vec3(1.0f, 0.0f, 0.0f));
+		trans = glm::rotate(trans, glm::radians(RotateY), glm::vec3(0.0f, 1.0f, 0.0f));
+		trans = glm::rotate(trans, glm::radians(RotateZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glm::mat4 normalTrans = glm::transpose(glm::inverse(trans));
+
+		glUniformMatrix4fv(normalTransformLoc, 1, GL_FALSE, glm::value_ptr(normalTrans));
+		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
+		DrawEarth();
+		/*
+		BindMoonArray();
+
+		trans = glm::mat4(1.0f);
 		trans = glm::translate(trans, glm::vec3(TransformX, TransformY, -5.0f));
 		//glm::angleAxis(glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 		trans = glm::scale(trans, glm::vec3(ScaleX, ScaleY, 1.0f));
@@ -254,22 +286,27 @@ int main() {
 		trans = glm::rotate(trans, glm::radians(RotateY), glm::vec3(0.0f, 1.0f, 0.0f));
 		trans = glm::rotate(trans, glm::radians(RotateZ), glm::vec3(0.0f, 0.0f, 1.0f));
 
-		glm::mat4 normalTrans = glm::transpose(glm::inverse(trans));
-
-		DrawEarth();
-
-		BindMoonArray();
-
+		glUniformMatrix4fv(normalTransformLoc, 1, GL_FALSE, glm::value_ptr(normalTrans));
+		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 		DrawMoon();
-
+		*/
 		BindSunArray();
+
+		trans = glm::mat4(1.0f);
+		trans = glm::translate(trans, glm::vec3(TransformX, -1.0f, 0.0f));
+		//glm::angleAxis(glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		trans = glm::scale(trans, glm::vec3(ScaleX, ScaleY, 1.0f));
+		trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		trans = glm::rotate(trans, glm::radians(RotateY), glm::vec3(0.0f, 1.0f, 0.0f));
+		trans = glm::rotate(trans, glm::radians(RotateZ), glm::vec3(0.0f, 0.0f, 1.0f));
+
+		glUniformMatrix4fv(normalTransformLoc, 1, GL_FALSE, glm::value_ptr(normalTrans));
+		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
 		DrawSun();
 
 		//DrawCube();
 		
-		glUniformMatrix4fv(normalTransformLoc, 1, GL_FALSE, glm::value_ptr(normalTrans));
-		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 		
 
 		//--- stop drawing here ---

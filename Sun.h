@@ -5,12 +5,12 @@ ObjData SunObjData;
 
 void InitializeSun() {
 
-	LoadObjFile(&SunObjData, "sun/Earth.obj");
-	GLfloat bunnyOffsets[] = { 6.5f, 0.0f, 0.0f };
+	LoadObjFile(&SunObjData, "plane/plane.obj");
+	GLfloat bunnyOffsets[] = { 0.0f, 0.0f, 0.0f };
 
 	LoadObjToMemory(
 		&SunObjData,
-		1.5f,
+		4.5f,
 		bunnyOffsets
 
 	);

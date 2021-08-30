@@ -5,7 +5,7 @@ ObjData bunnyObjData;
 
 void InitializeBunny() {
 	
-	LoadObjFile(&bunnyObjData, "earth/Earth.obj");
+	LoadObjFile(&bunnyObjData, "LibertyStatue/LibertStatue.obj");
 	GLfloat bunnyOffsets[] = { -2.5f, 0.0f, 0.0f };
 	
 	LoadObjToMemory(
