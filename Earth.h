@@ -6,7 +6,7 @@ ObjData EarthObjData;
 
 void InitializeEarth() {
 	
-	LoadObjFile(&EarthObjData, "LibertyStatue/LibertStatue.obj");
+	LoadObjFile(&EarthObjData, "earth_2k/Earth_2K.obj");
 	GLfloat bunnyOffsets[] = { 0.0f, 0.0f, -1.5f };
 
 	LoadObjToMemory(
@@ -27,8 +27,14 @@ void DrawEarth() {
 	GLuint backPackTexture = EarthObjData.textures[EarthObjData.materials[0].diffuse_texname];
 	glBindTexture(GL_TEXTURE_2D, backPackTexture);
 
-	glDrawElements(GL_TRIANGLES, EarthObjData.numFaces, GL_UNSIGNED_INT, (void*)0);
+	glActiveTexture(GL_TEXTURE1);
+	GLuint nightTexture = EarthObjData.textures[EarthObjData.materials[1].diffuse_texname];
+	glBindTexture(GL_TEXTURE_2D, nightTexture);
 
+	//glEnable(GL_BLEND);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glDrawElements(GL_TRIANGLES, EarthObjData.numFaces, GL_UNSIGNED_INT, (void*)0);
+	//glDisable(GL_BLEND);
 	glBindTexture(GL_TEXTURE_2D, 0);
 
 

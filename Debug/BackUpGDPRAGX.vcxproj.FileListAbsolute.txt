@@ -1,3 +1,0 @@
-C:\Users\User\source\repos\BackUpGDPRAGX\Debug\glew32.dll
-C:\Users\User\source\repos\BackUpGDPRAGX\Debug\BackUpGDPRAGX.exe
-C:\Users\User\source\repos\BackUpGDPRAGX\Debug\BackUpGDPRAGX.pdb

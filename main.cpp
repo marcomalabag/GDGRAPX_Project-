@@ -138,7 +138,7 @@ int main() {
 
 	GLuint skyboxShader = LoadShaders("Shaders/skybox_vertex.shader", "Shaders/skybox_fragment.shader");
 
-	GLuint shaderProgram = LoadShaders("Shaders/Phong_vertex.shader", "Shaders/Phong_directional_fragment.shader");
+	GLuint shaderProgram = LoadShaders("Shaders/Phong_vertex.shader", "Shaders/night_fragment.shader");
 	
 	glUseProgram(shaderProgram);
 	GLuint colorLoc = glGetUniformLocation(shaderProgram, "uniformColor");
@@ -162,8 +162,15 @@ int main() {
 	
 	GLuint lightPoscLoc = glGetUniformLocation(shaderProgram, "u_light_post");
 	GLuint lightDirLoc = glGetUniformLocation(shaderProgram, "u_light_dir");
-	glUniform3f(lightPoscLoc, 1.0f, 1.0f, 0.0f);
-	glUniform3f(lightDirLoc, 0.0f, 0.0f, 0.0f);
+	GLuint diffuseTexLoc = glGetUniformLocation(shaderProgram, "texture_diffuse");
+	GLuint nightTexLoc = glGetUniformLocation(shaderProgram, "night_diffuse");
+	
+	
+	glUniform1i(diffuseTexLoc, 0);
+	glUniform1i(nightTexLoc, 1);
+
+	glUniform3f(lightPoscLoc, 0.0f, 0.0f, 10.0f);
+	glUniform3f(lightDirLoc, 0.0f, 0.0f, -1.0f);
 
 #pragma endregion
 

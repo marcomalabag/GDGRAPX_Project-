@@ -143,9 +143,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Shaders\alpha_test_fragment.shader" />
     <None Include="Shaders\fragment.shader" />
     <None Include="Shaders\gouraud2_fragment.shader" />
     <None Include="Shaders\gouraud2_vertex.shader" />
+    <None Include="Shaders\night_fragment.shader" />
     <None Include="Shaders\phong_directional_fragment.shader" />
     <None Include="Shaders\Phong_fragment.shader" />
     <None Include="Shaders\phong_spotlight_fragment.shader" />
