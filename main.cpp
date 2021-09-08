@@ -276,7 +276,7 @@ int main() {
 		//glm::angleAxis(glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 		trans = glm::scale(trans, glm::vec3(ScaleX, ScaleY, 1.0f));
 		//trans = glm::rotate(trans, glm::radians(RotateX), glm::vec3(1.0f, 0.0f, 0.0f));
-		trans = glm::rotate(trans, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//trans = glm::rotate(trans, glm::radians(RotateY), glm::vec3(0.0f, 1.0f, 0.0f));
 		//trans = glm::rotate(trans, glm::radians(RotateZ), glm::vec3(0.0f, 0.0f, 1.0f));
 		glm::mat4 normalTrans = glm::transpose(glm::inverse(trans));
 

@@ -6,7 +6,7 @@ ObjData EarthObjData;
 
 void InitializeEarth() {
 	
-	LoadObjFile(&EarthObjData, "backpack/backpack.obj");
+	LoadObjFile(&EarthObjData, "LibertyStatue/LibertStatue.obj");
 	GLfloat bunnyOffsets[] = { 0.0f, 0.0f, -1.5f };
 
 	LoadObjToMemory(
