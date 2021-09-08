@@ -150,6 +150,7 @@
     <None Include="Shaders\night_fragment.shader" />
     <None Include="Shaders\phong_directional_fragment.shader" />
     <None Include="Shaders\Phong_fragment.shader" />
+    <None Include="Shaders\Phong_normal_fragment.shader" />
     <None Include="Shaders\phong_spotlight_fragment.shader" />
     <None Include="Shaders\Phong_vertex.shader" />
     <None Include="Shaders\skybox_fragment.shader" />

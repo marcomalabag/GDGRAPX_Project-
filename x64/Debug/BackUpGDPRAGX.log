@@ -1,18 +1,18 @@
 ﻿  main.cpp
 C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.h(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\obj_mesh.h(196,36): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\obj_mesh.h(212,36): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=unsigned int
           ]
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\obj_mesh.h(200,36): warning C4267: '=': conversion from 'size_t' to 'GLulong', possible loss of data
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(200,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(222,24): warning C4244: 'initializing': conversion from 'float' to 'GLsizei', possible loss of data
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(332,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(333,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(337,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(338,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(339,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(340,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\obj_mesh.h(216,36): warning C4267: '=': conversion from 'size_t' to 'GLulong', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(202,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(224,24): warning C4244: 'initializing': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(334,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(335,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(339,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(340,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(341,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(342,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   BackUpGDPRAGX.vcxproj -> C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\x64\Debug\BackUpGDPRAGX.exe

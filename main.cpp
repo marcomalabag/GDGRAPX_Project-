@@ -117,8 +117,8 @@ int main() {
 #pragma region Mesh Loading
 
 	InitializeEarth();
-	InitializeMoon();
-	InitializeSun();
+	//InitializeMoon();
+	//InitializeSun();
 
 	std::vector<std::string> faces{
 		"right.png",
@@ -138,7 +138,7 @@ int main() {
 
 	GLuint skyboxShader = LoadShaders("Shaders/skybox_vertex.shader", "Shaders/skybox_fragment.shader");
 
-	GLuint shaderProgram = LoadShaders("Shaders/Phong_vertex.shader", "Shaders/night_fragment.shader");
+	GLuint shaderProgram = LoadShaders("Shaders/Phong_vertex.shader", "Shaders/Phong_normal_fragment.shader");
 	
 	glUseProgram(shaderProgram);
 	GLuint colorLoc = glGetUniformLocation(shaderProgram, "uniformColor");
@@ -163,11 +163,13 @@ int main() {
 	GLuint lightPoscLoc = glGetUniformLocation(shaderProgram, "u_light_post");
 	GLuint lightDirLoc = glGetUniformLocation(shaderProgram, "u_light_dir");
 	GLuint diffuseTexLoc = glGetUniformLocation(shaderProgram, "texture_diffuse");
-	GLuint nightTexLoc = glGetUniformLocation(shaderProgram, "night_diffuse");
+	GLuint nightTexLoc = glGetUniformLocation(shaderProgram, "texture_normal");
+	
 	
 	
 	glUniform1i(diffuseTexLoc, 0);
 	glUniform1i(nightTexLoc, 1);
+	
 
 	glUniform3f(lightPoscLoc, 0.0f, 0.0f, 10.0f);
 	glUniform3f(lightDirLoc, 0.0f, 0.0f, -1.0f);
@@ -273,9 +275,9 @@ int main() {
 		trans = glm::translate(trans, glm::vec3(TransformX, -1.0f, 0.0f));
 		//glm::angleAxis(glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 		trans = glm::scale(trans, glm::vec3(ScaleX, ScaleY, 1.0f));
-		trans = glm::rotate(trans, glm::radians(RotateX), glm::vec3(1.0f, 0.0f, 0.0f));
-		trans = glm::rotate(trans, glm::radians(RotateY), glm::vec3(0.0f, 1.0f, 0.0f));
-		trans = glm::rotate(trans, glm::radians(RotateZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		//trans = glm::rotate(trans, glm::radians(RotateX), glm::vec3(1.0f, 0.0f, 0.0f));
+		trans = glm::rotate(trans, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//trans = glm::rotate(trans, glm::radians(RotateZ), glm::vec3(0.0f, 0.0f, 1.0f));
 		glm::mat4 normalTrans = glm::transpose(glm::inverse(trans));
 
 		glUniformMatrix4fv(normalTransformLoc, 1, GL_FALSE, glm::value_ptr(normalTrans));
@@ -297,8 +299,8 @@ int main() {
 		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 		DrawMoon();
 		*/
-		BindSunArray();
-
+		//BindSunArray();
+		/*
 		trans = glm::mat4(1.0f);
 		trans = glm::translate(trans, glm::vec3(TransformX, -1.0f, 0.0f));
 		//glm::angleAxis(glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
@@ -311,7 +313,7 @@ int main() {
 		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
 		DrawSun();
-
+		*/
 		//DrawCube();
 		
 		

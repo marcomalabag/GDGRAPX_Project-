@@ -6,7 +6,7 @@ ObjData EarthObjData;
 
 void InitializeEarth() {
 	
-	LoadObjFile(&EarthObjData, "earth_2k/Earth_2K.obj");
+	LoadObjFile(&EarthObjData, "backpack/backpack.obj");
 	GLfloat bunnyOffsets[] = { 0.0f, 0.0f, -1.5f };
 
 	LoadObjToMemory(
@@ -28,8 +28,10 @@ void DrawEarth() {
 	glBindTexture(GL_TEXTURE_2D, backPackTexture);
 
 	glActiveTexture(GL_TEXTURE1);
-	GLuint nightTexture = EarthObjData.textures[EarthObjData.materials[1].diffuse_texname];
-	glBindTexture(GL_TEXTURE_2D, nightTexture);
+	GLuint normalTexture = EarthObjData.textures[EarthObjData.materials[0].bump_texname];
+	glBindTexture(GL_TEXTURE_2D, normalTexture);
+
+	
 
 	//glEnable(GL_BLEND);
 	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

@@ -4,8 +4,12 @@ out vec4 FragColor;
 in vec3 FragPos;
 in vec2 UV;
 in vec3 Normal;
+in vec3 Tangent;
+in vec3 Bitangent;
 uniform sampler2D texture_diffuse;
 uniform sampler2D night_diffuse;
+uniform sampler2D third_diffuse;
+
 
 uniform vec3 u_light_post;
 uniform vec3 u_camera_pos;
@@ -45,7 +49,7 @@ void main()
 	vec3 ambient = u_ambient_color * lightColor;
 
 
-	FragColor = vec4(ambient + (diffuse + specular), 1.0) * texture(texture_diffuse, UV) + texture(night_diffuse, UV) * (1.0 - NdotL);
+	FragColor = vec4(ambient + (diffuse + specular), 1.0) * texture(texture_diffuse, UV)  +  texture(night_diffuse, UV) * (1.0 - NdotL);
 
 
 }

@@ -53,6 +53,7 @@
     <None Include="Shaders\skybox_vertex.shader" />
     <None Include="Shaders\alpha_test_fragment.shader" />
     <None Include="Shaders\night_fragment.shader" />
+    <None Include="Shaders\Phong_normal_fragment.shader" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="Assets\bunny.obj">
