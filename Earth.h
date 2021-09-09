@@ -6,8 +6,8 @@ ObjData EarthObjData;
 
 void InitializeEarth() {
 	
-	LoadObjFile(&EarthObjData, "LibertyStatue/LibertStatue.obj");
-	GLfloat bunnyOffsets[] = { 0.0f, 0.0f, -1.5f };
+	LoadObjFile(&EarthObjData, "earth_2k/Earth_2K.obj");
+	GLfloat bunnyOffsets[] = { 0.0f, 0.0f, 4.5f };
 
 	LoadObjToMemory(
 		&EarthObjData,
@@ -28,7 +28,7 @@ void DrawEarth() {
 	glBindTexture(GL_TEXTURE_2D, backPackTexture);
 
 	glActiveTexture(GL_TEXTURE1);
-	GLuint normalTexture = EarthObjData.textures[EarthObjData.materials[0].bump_texname];
+	GLuint normalTexture = EarthObjData.textures[EarthObjData.materials[1].diffuse_texname];
 	glBindTexture(GL_TEXTURE_2D, normalTexture);
 
 	

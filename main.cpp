@@ -5,6 +5,9 @@
 #include "Sun.h"
 #include "Earth.h"
 #include "skybox.h"
+#include "LibertyStatue.h"
+#include "LoadNormalShader.h"
+#include "LoadMultipleShader.h"
 
 
 double XMousePosition, YMousePosition;
@@ -116,7 +119,8 @@ int main() {
 #pragma endregion
 #pragma region Mesh Loading
 
-	InitializeEarth();
+	InitializeLibertyStatue();
+	//InitializeEarth();
 	//InitializeMoon();
 	//InitializeSun();
 
@@ -138,42 +142,11 @@ int main() {
 
 	GLuint skyboxShader = LoadShaders("Shaders/skybox_vertex.shader", "Shaders/skybox_fragment.shader");
 
-	GLuint shaderProgram = LoadShaders("Shaders/Phong_vertex.shader", "Shaders/Phong_normal_fragment.shader");
-	
-	glUseProgram(shaderProgram);
-	GLuint colorLoc = glGetUniformLocation(shaderProgram, "uniformColor");
-	glUniform3f(colorLoc, 1.0f, 1.0f, 1.0f);
-
-	GLuint modeltransformLoc = glGetUniformLocation(shaderProgram, "u_model");
-	GLuint viewLoc = glGetUniformLocation(shaderProgram, "u_view");
-	GLuint projectionLoc = glGetUniformLocation(shaderProgram, "u_projection");
-
-	GLuint normalTransformLoc = glGetUniformLocation(shaderProgram, "u_normal");
-	GLuint cameraPosLoc = glGetUniformLocation(shaderProgram, "u_camera_pos");
-	GLuint ambientColorLoc = glGetUniformLocation(shaderProgram, "u_ambient_color");
-	glUniform3f(ambientColorLoc, 0.1f, 0.1f, 0.1f);
-
-	glm::mat4 trans = glm::mat4(1.0f);
-	glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-
-
-	glm::mat4 projection = glm::mat4(1.0f);
-	//glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
-	
-	GLuint lightPoscLoc = glGetUniformLocation(shaderProgram, "u_light_post");
-	GLuint lightDirLoc = glGetUniformLocation(shaderProgram, "u_light_dir");
-	GLuint diffuseTexLoc = glGetUniformLocation(shaderProgram, "texture_diffuse");
-	GLuint nightTexLoc = glGetUniformLocation(shaderProgram, "texture_normal");
-	
-	
-	
-	glUniform1i(diffuseTexLoc, 0);
-	glUniform1i(nightTexLoc, 1);
-	
-
-	glUniform3f(lightPoscLoc, 0.0f, 0.0f, 10.0f);
-	glUniform3f(lightDirLoc, 0.0f, 0.0f, -1.0f);
-
+	LoadData();
+	/*
+	InitializeEarth();
+	LoadDataForMultipleTexture();
+	*/
 #pragma endregion
 
 	// set bg color to green
@@ -245,7 +218,11 @@ int main() {
 		
 		glUniform3f(cameraPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-
+		
+		/*
+		glUniform3f(MultiplecameraPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
+		glUniformMatrix4fv(MultipleviewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		*/
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -256,16 +233,19 @@ int main() {
 
 		DrawSkyBox(skybox, skyboxShader, view, projection);
 
-		BindEarthArray();
-		glUseProgram(shaderProgram);
-		/*
+		//BindEarthArray();
+		
+		BindLibertyStatueArray();
+		glUseProgram(NormalshaderProgram);
+		
+		
 		if (setOrtho) {
 			projection = glm::ortho(0.0f, (GLfloat)width, 0.0f, (GLfloat)height * 2, 0.1f, 10.0f);
 		}
 		else if (setPers) {
 			projection = glm::perspective(glm::radians(fovy), ratio, 0.1f, 15.0f);
 		}
-		*/
+		
 		//normalTrans = glm::transpose(glm::inverse(trans));
 
 		projection = glm::perspective(glm::radians(fovy), ratio, 0.1f, 15.0f);
@@ -283,7 +263,30 @@ int main() {
 		glUniformMatrix4fv(normalTransformLoc, 1, GL_FALSE, glm::value_ptr(normalTrans));
 		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
+		//DrawEarth();
+		DrawLibertyStatue();
+		/*
+		BindEarthArray();
+		glUseProgram(MultipleshaderProgram);
+		Multipleprojection = glm::perspective(glm::radians(fovy), ratio, 0.1f, 15.0f);
+		glUniformMatrix4fv(MultipleprojectionLoc, 1, GL_FALSE, glm::value_ptr(Multipleprojection));
+
+		Multipletrans = glm::mat4(1.0f);
+		Multipletrans = glm::translate(Multipletrans, glm::vec3(TransformX, -1.0f, 0.0f));
+		//glm::angleAxis(glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		Multipletrans = glm::scale(trans, glm::vec3(ScaleX, ScaleY, 1.0f));
+		//trans = glm::rotate(trans, glm::radians(RotateX), glm::vec3(1.0f, 0.0f, 0.0f));
+		//trans = glm::rotate(trans, glm::radians(RotateY), glm::vec3(0.0f, 1.0f, 0.0f));
+		//trans = glm::rotate(trans, glm::radians(RotateZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glm::mat4 MultiplenormalTrans = glm::transpose(glm::inverse(Multipletrans));
+
+		glUniformMatrix4fv(MultiplenormalTransformLoc, 1, GL_FALSE, glm::value_ptr(MultiplenormalTrans));
+		glUniformMatrix4fv(MultiplemodeltransformLoc, 1, GL_FALSE, glm::value_ptr(Multipletrans));
+		
+
+
 		DrawEarth();
+		
 		/*
 		BindMoonArray();
 

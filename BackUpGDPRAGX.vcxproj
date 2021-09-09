@@ -198,6 +198,9 @@
     <ClInclude Include="Header\Sun.h" />
     <ClInclude Include="Header\Teapot.h" />
     <ClInclude Include="Header\Window.h" />
+    <ClInclude Include="LibertyStatue.h" />
+    <ClInclude Include="LoadMultipleShader.h" />
+    <ClInclude Include="LoadNormalShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

@@ -118,6 +118,15 @@
     <ClInclude Include="Header\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LibertyStatue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadNormalShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadMultipleShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

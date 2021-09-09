@@ -8,7 +8,7 @@ in vec3 Tangent;
 in vec3 Bitangent;
 uniform sampler2D texture_diffuse;
 uniform sampler2D night_diffuse;
-uniform sampler2D third_diffuse;
+
 
 
 uniform vec3 u_light_post;
