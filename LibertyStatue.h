@@ -28,6 +28,14 @@ void DrawLibertyStatue() {
 	GLuint normalTexture = LibertyStatueData.textures[LibertyStatueData.materials[0].bump_texname];
 	glBindTexture(GL_TEXTURE_2D, normalTexture);
 
+	glActiveTexture(GL_TEXTURE3);
+	GLuint SecondTexture = LibertyStatueData.textures[LibertyStatueData.materials[1].diffuse_texname];
+	glBindTexture(GL_TEXTURE_2D, SecondTexture);
+
+	glActiveTexture(GL_TEXTURE4);
+	GLuint SecondnormalTexture = LibertyStatueData.textures[LibertyStatueData.materials[1].bump_texname];
+	glBindTexture(GL_TEXTURE_2D, SecondnormalTexture);
+
 
 
 	//glEnable(GL_BLEND);

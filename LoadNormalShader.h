@@ -16,6 +16,9 @@ GLuint lightDirLoc;
 GLuint diffuseTexLoc;
 GLuint nightTexLoc;
 
+GLuint SeconddiffuseTexLoc;
+GLuint SecondnightTexLoc;
+
 void LoadData() {
 	NormalshaderProgram  = LoadShaders("Shaders/Phong_vertex.shader", "Shaders/Phong_normal_fragment.shader");
 
@@ -44,11 +47,15 @@ void LoadData() {
 	diffuseTexLoc = glGetUniformLocation(NormalshaderProgram, "texture_diffuse");
 	nightTexLoc = glGetUniformLocation(NormalshaderProgram, "texture_normal");
 
+	SeconddiffuseTexLoc = glGetUniformLocation(NormalshaderProgram, "diffuse_second");
+	SecondnightTexLoc = glGetUniformLocation(NormalshaderProgram, "normal_second");
 
 
 
 	glUniform1i(diffuseTexLoc, 0);
 	glUniform1i(nightTexLoc, 1);
+	glUniform1i(SeconddiffuseTexLoc, 2);
+	glUniform1i(SecondnightTexLoc, 3);
 
 
 	glUniform3f(lightPoscLoc, 0.0f, 0.0f, 10.0f);
