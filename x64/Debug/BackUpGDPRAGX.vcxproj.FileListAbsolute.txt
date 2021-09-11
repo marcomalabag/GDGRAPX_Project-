@@ -4,3 +4,5 @@ C:\Users\User\source\repos\GDPRAGX_Project\GDGRAPX---S11---Project\x64\Debug\Bac
 C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\x64\Debug\glew32.dll
 C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\x64\Debug\BackUpGDPRAGX.exe
 C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\x64\Debug\BackUpGDPRAGX.pdb
+C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\x64\Debug\glew32.dll
+C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\x64\Debug\BackUpGDPRAGX.exe
