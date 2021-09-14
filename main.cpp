@@ -129,15 +129,15 @@ int main() {
 	//InitializeSun();
 
 	std::vector<std::string> faces{
-		"right.png",
-		"left.png",
-		"top.png",
-		"bottom.png",
-		"front.png",
-		"back.png"
+		"right.jpg",
+		"left.jpg",
+		"top.jpg",
+		"bottom.jpg",
+		"front.jpg",
+		"back.jpg"
 	};
 
-	SkyboxData skybox = LoadSkybox("Skybox", faces);
+	SkyboxData skybox = LoadSkybox("Skybox2", faces);
 
 	//InitializeCube();
 #pragma endregion
