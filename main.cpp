@@ -7,6 +7,7 @@
 #include "skybox.h"
 #include "LibertyStatue.h"
 #include "WoodenTable.h"
+#include "FlatSurface.h"
 #include "BrandenburgGate.h"
 #include "LoadNormalShader.h"
 #include "LoadMultipleShader.h"
@@ -124,6 +125,7 @@ int main() {
 	InitializeLibertyStatue();
 	InitializeBrandenburgGate();
 	InitializeWoodenTable();
+	InitializeFlatSurface();
 	//InitializeEarth();
 	//InitializeMoon();
 	//InitializeSun();
@@ -322,6 +324,9 @@ int main() {
 		
 		BindWoodenTable();
 		DrawWoodenTable();
+
+		BindFlatSurfaceArray();
+		DrawFlatSurface();
 
 		//--- stop drawing here ---
 

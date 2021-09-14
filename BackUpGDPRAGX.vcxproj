@@ -186,6 +186,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Downloads\tiny_obj_loader.h" />
     <ClInclude Include="BrandenburgGate.h" />
+    <ClInclude Include="FlatSurface.h" />
     <ClInclude Include="Header\Bunny.h" />
     <ClInclude Include="Header\Cube.h" />
     <ClInclude Include="Header\Earth.h" />

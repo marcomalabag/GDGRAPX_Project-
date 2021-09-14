@@ -6,7 +6,7 @@ ObjData BrandenburgGateData;
 void InitializeBrandenburgGate() {
 	LoadObjFile(&BrandenburgGateData, "BrandenburgGate/BrandenburgGate.obj");
 
-	GLfloat GateOffsets[] = { -3.0f, 0.0f, -1.5f };
+	GLfloat GateOffsets[] = { -3.0f, 0.1f, -1.5f };
 
 	LoadObjToMemory(
 		&BrandenburgGateData,

@@ -6,7 +6,7 @@ ObjData LibertyStatueData;
 void InitializeLibertyStatue() {
 	LoadObjFile(&LibertyStatueData, "LibertyStatue/LibertStatue.obj");
 
-	GLfloat StatueOffsets[] = { 0.0f, 0.0f, -1.5f };
+	GLfloat StatueOffsets[] = { 0.0f, 0.05f, -1.5f };
 
 	LoadObjToMemory(
 		&LibertyStatueData,

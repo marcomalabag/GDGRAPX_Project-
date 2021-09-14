@@ -6,7 +6,7 @@ ObjData WoodenTableData;
 void InitializeWoodenTable() {
 	LoadObjFile(&WoodenTableData, "WoodenTable/Wood_Table.obj");
 
-	GLfloat GateOffsets[] = { 3.0f, 0.0f, -1.5f };
+	GLfloat GateOffsets[] = { 3.0f, 0.05f, -1.5f };
 
 	LoadObjToMemory(
 		&WoodenTableData,
