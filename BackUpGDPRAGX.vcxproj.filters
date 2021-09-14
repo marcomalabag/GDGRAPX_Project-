@@ -127,6 +127,12 @@
     <ClInclude Include="LoadMultipleShader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BrandenburgGate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WoodenTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

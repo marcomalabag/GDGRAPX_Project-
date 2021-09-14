@@ -1,0 +1,14 @@
+newmtl 09_-_BronzeStatues
+Ns 10
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0 0 0
+map_Kd MarbleColumns2.jpg
+map_Bump MarbleColumns2_normal.png
+newmtl 02_-_Marble
+Ns 10
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0 0 0
+map_Kd BronzeRoof1.jpg
+map_Bump BronzeRoof1_normal.png

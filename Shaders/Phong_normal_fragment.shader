@@ -7,8 +7,8 @@ in vec3 Normal;
 in mat3 TBN;
 uniform sampler2D texture_diffuse;
 uniform sampler2D texture_normal;
-uniform sampler2D normal_second;
 uniform sampler2D diffuse_second;
+uniform sampler2D normal_second;
 
 uniform vec3 u_light_dir;
 uniform vec3 u_light_post;
@@ -44,10 +44,11 @@ void main()
 	vec3 specular = specularStrength * spec * lightColor;
 
 	vec3 diffuse = vec3(max(dot(tbnNormal, lightVector), 0.0)) * lightColor;
+	float NdotL = max(dot(tbnNormal, lightVector), 0.0);
 	vec3 ambient = u_ambient_color * lightColor;
 
 	//FragColor = vec4(tbnNormal, 1.0);// texture(texture_normal, UV);
-	FragColor = vec4(ambient + (diffuse + specular), 1.0) * texture(texture_diffuse, UV) + texture(diffuse_second, UV);
+	FragColor = vec4(ambient + (diffuse + specular), 1.0) * texture(texture_diffuse, UV) + texture(diffuse_second, UV) * (1 - NdotL);
 
 
 }

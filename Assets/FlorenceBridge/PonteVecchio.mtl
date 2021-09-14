@@ -1,0 +1,15 @@
+newmtl 15_-_Persiana
+Ns 10
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0.172549 0.172549 0.172549
+map_Kd Persiana-2.jpg
+map_Bump Persiana-2_normal.png
+
+newmtl 01_-_Ponte
+Ns 10
+Ka 0 0 0
+Kd 0.8 0.8 0.8
+Ks 0.121569 0.121569 0.121569
+map_Kd FinestraPonte-1.jpg
+map_Bump FinestraPonte-1_normal.png

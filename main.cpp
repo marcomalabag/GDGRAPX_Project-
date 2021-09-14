@@ -6,6 +6,8 @@
 #include "Earth.h"
 #include "skybox.h"
 #include "LibertyStatue.h"
+#include "WoodenTable.h"
+#include "BrandenburgGate.h"
 #include "LoadNormalShader.h"
 #include "LoadMultipleShader.h"
 
@@ -120,6 +122,8 @@ int main() {
 #pragma region Mesh Loading
 
 	InitializeLibertyStatue();
+	InitializeBrandenburgGate();
+	InitializeWoodenTable();
 	//InitializeEarth();
 	//InitializeMoon();
 	//InitializeSun();
@@ -233,7 +237,7 @@ int main() {
 
 		DrawSkyBox(skybox, skyboxShader, view, projection);
 
-		//BindEarthArray();
+		
 		
 		BindLibertyStatueArray();
 		glUseProgram(NormalshaderProgram);
@@ -263,7 +267,7 @@ int main() {
 		glUniformMatrix4fv(normalTransformLoc, 1, GL_FALSE, glm::value_ptr(normalTrans));
 		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
-		//DrawEarth();
+		
 		DrawLibertyStatue();
 		/*
 		BindEarthArray();
@@ -282,14 +286,10 @@ int main() {
 
 		glUniformMatrix4fv(MultiplenormalTransformLoc, 1, GL_FALSE, glm::value_ptr(MultiplenormalTrans));
 		glUniformMatrix4fv(MultiplemodeltransformLoc, 1, GL_FALSE, glm::value_ptr(Multipletrans));
-		
+		*/
 
-
-		DrawEarth();
-		
+		BindBrandenburgGate();
 		/*
-		BindMoonArray();
-
 		trans = glm::mat4(1.0f);
 		trans = glm::translate(trans, glm::vec3(TransformX, TransformY, -5.0f));
 		//glm::angleAxis(glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
@@ -300,8 +300,9 @@ int main() {
 
 		glUniformMatrix4fv(normalTransformLoc, 1, GL_FALSE, glm::value_ptr(normalTrans));
 		glUniformMatrix4fv(modeltransformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-		DrawMoon();
 		*/
+		DrawBrandenburgGate();
+		
 		//BindSunArray();
 		/*
 		trans = glm::mat4(1.0f);
@@ -319,7 +320,8 @@ int main() {
 		*/
 		//DrawCube();
 		
-		
+		BindWoodenTable();
+		DrawWoodenTable();
 
 		//--- stop drawing here ---
 

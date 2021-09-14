@@ -1,18 +1,18 @@
 ﻿  main.cpp
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.h(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\obj_mesh.h(212,36): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.h(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\obj_mesh.h(212,36): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=unsigned int
           ]
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\obj_mesh.h(216,36): warning C4267: '=': conversion from 'size_t' to 'GLulong', possible loss of data
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.cpp(175,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.cpp(197,24): warning C4244: 'initializing': conversion from 'float' to 'GLsizei', possible loss of data
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.cpp(337,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.cpp(338,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.cpp(342,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.cpp(343,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.cpp(344,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\main.cpp(345,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  BackUpGDPRAGX.vcxproj -> C:\Users\CYTO\Documents\GitHub\GDGRAPX_Project-\x64\Debug\BackUpGDPRAGX.exe
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\obj_mesh.h(216,36): warning C4267: '=': conversion from 'size_t' to 'GLulong', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(179,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(201,24): warning C4244: 'initializing': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(339,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(340,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(344,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(345,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(346,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\main.cpp(347,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  BackUpGDPRAGX.vcxproj -> C:\Users\User\source\repos\GDPRAGX_Project - Copy\GDGRAPX_Project-\x64\Debug\BackUpGDPRAGX.exe

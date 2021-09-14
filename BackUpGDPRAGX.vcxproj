@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Downloads\tiny_obj_loader.h" />
+    <ClInclude Include="BrandenburgGate.h" />
     <ClInclude Include="Header\Bunny.h" />
     <ClInclude Include="Header\Cube.h" />
     <ClInclude Include="Header\Earth.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="LibertyStatue.h" />
     <ClInclude Include="LoadMultipleShader.h" />
     <ClInclude Include="LoadNormalShader.h" />
+    <ClInclude Include="WoodenTable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
